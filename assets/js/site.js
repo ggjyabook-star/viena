@@ -7,6 +7,61 @@
 
   var CFG = (window.VIENA_DATA && window.VIENA_DATA.config) || {};
 
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  /* ---------- Galería de estilo de vida ----------
+     Cada entrada usa su foto si tiene `src`; si no, se dibuja la ilustración
+     correspondiente para que la sección nunca se vea vacía. */
+  var galeria = (window.VIENA_DATA && window.VIENA_DATA.galeria) || [];
+  var grid = document.getElementById('life-grid');
+
+  if (grid && galeria.length) {
+    var arte = window.VIENA_ARTE || {};
+    var dibujadas = 0;
+
+    grid.innerHTML = galeria.map(function (g) {
+      var medio;
+      if (g.src) {
+        medio = '<img src="' + esc(g.src) + '" alt="' + esc(g.alt) + '" ' +
+                'loading="lazy" decoding="async">';
+      } else if (typeof arte[g.arte] === 'function') {
+        dibujadas++;
+        medio = arte[g.arte]();
+      } else {
+        medio = '';
+      }
+      return '<li>' + medio +
+        '<span class="life-cap">' +
+          '<span class="life-t">' + esc(g.titulo) + '</span>' +
+          (g.nota ? '<span class="life-n">' + esc(g.nota) + '</span>' : '') +
+        '</span>' +
+      '</li>';
+    }).join('');
+
+    var notaVida = document.getElementById('life-note');
+    if (notaVida) {
+      notaVida.hidden = dibujadas === 0;
+      notaVida.textContent = 'Ilustraciones de referencia: el entorno está dibujado, no fotografiado. ' +
+        'Se sustituyen por fotografía de Puerto Vallarta en cuanto esté disponible.';
+    }
+  }
+
+  /* ---------- Fotografía de portada (opcional) ---------- */
+  var heroBg = document.getElementById('hero-bg');
+  if (heroBg && CFG.heroImagen) {
+    var foto = document.createElement('img');
+    foto.className = 'hero-photo';
+    foto.src = CFG.heroImagen;
+    foto.alt = '';
+    foto.decoding = 'async';
+    heroBg.innerHTML = '';
+    heroBg.appendChild(foto);
+  }
+
   /* ---------- Año del pie ---------- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

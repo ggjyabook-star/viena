@@ -72,7 +72,7 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="inicio">
-  <div class="hero-bg" aria-hidden="true">
+  <div class="hero-bg" id="hero-bg" aria-hidden="true">
     <svg class="hero-art" viewBox="0 0 800 520" preserveAspectRatio="xMidYMax slice" role="presentation">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
@@ -174,8 +174,22 @@
   </div>
 </section>
 
+<!-- ============ ESTILO DE VIDA ============ -->
+<section class="section life" id="vida">
+  <div class="shell">
+    <p class="eyebrow">Estilo de vida</p>
+    <h2 class="section-title">La playa como patio trasero</h2>
+    <p class="life-lede">
+      Días de playa a pie, tardes de malecón y una colonia que se camina
+      completa. Esto es lo que hay al salir por la puerta.
+    </p>
+    <ul class="life-grid" id="life-grid"></ul>
+    <p class="life-note" id="life-note" hidden></p>
+  </div>
+</section>
+
 <!-- ============ AMENIDADES ============ -->
-<section class="section" id="amenidades">
+<section class="section section-alt" id="amenidades">
   <div class="shell">
     <p class="eyebrow">Amenidades</p>
     <h2 class="section-title">Pensadas para vivir y para rentar</h2>
@@ -419,6 +433,7 @@
 </footer>
 
 <script src="assets/js/data.js"></script>
+<script src="assets/js/artwork.js"></script>
 <script src="assets/js/availability.js"></script>
 <script src="assets/js/site.js"></script>
 </body>

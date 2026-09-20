@@ -31,11 +31,12 @@ Las secciones siguen la narrativa de compra, no el orden en que se escribieron:
 | 1 | Hero | Qué es y por qué importa |
 | 2 | El proyecto | Cómo está pensado |
 | 3 | Ubicación | Dónde está y qué tiene cerca |
-| 4 | Amenidades | Qué incluye |
-| 5 | **Disponibilidad** | Qué hay y a qué precio |
-| 6 | Cómo se compra | Qué sigue después de elegir |
-| 7 | Inversión | Por qué conviene |
-| 8 | Contacto | Con quién hablar |
+| 4 | Estilo de vida | Cómo se vive alrededor |
+| 5 | Amenidades | Qué incluye |
+| 6 | **Disponibilidad** | Qué hay y a qué precio |
+| 7 | Cómo se compra | Qué sigue después de elegir |
+| 8 | Inversión | Por qué conviene |
+| 9 | Contacto | Con quién hablar |
 
 Disponibilidad va después de las secciones que venden el proyecto y antes de las
 que cierran la venta; lleva filetes arriba y abajo para marcarla como la pieza
@@ -54,6 +55,7 @@ index.html                    Página completa
 assets/css/site.css           Estilos generales (paleta, tipografía, secciones)
 assets/css/availability.css   Estilos de la sección Disponibilidad
 assets/js/data.js             ← inventario, precios y contacto (lo único que se edita a diario)
+assets/js/artwork.js          Ilustraciones SVG (relleno mientras no hay fotos)
 assets/js/availability.js     Lógica de la sección Disponibilidad
 assets/js/site.js             Navegación, scrollspy y formulario
 ```
@@ -101,6 +103,41 @@ Mientras `config.demo` sea `true`, la sección muestra un aviso visible de que e
 inventario es de ejemplo. Es una red de seguridad: evita que el sitio salga a
 producción presentando precios de ejemplo como disponibilidad real. Cambiarlo a
 `false` **sólo** cuando las unidades de `unidades` sean las reales.
+
+### Poner fotografías
+
+La sección **Estilo de vida** y la portada aceptan fotos sin tocar código. Mientras
+no las haya, se dibujan ilustraciones (`assets/js/artwork.js`) para que la página
+nunca se vea vacía, y aparece una nota que aclara que el entorno está dibujado.
+
+Deja el archivo en `assets/img/` y escribe su ruta:
+
+```js
+galeria: [
+  { src: 'assets/img/tules.jpg', arte: 'playa', titulo: 'Playa Los Tules',
+    nota: 'A dos cuadras', alt: 'Atardecer en Playa Los Tules con palmeras.' },
+  ...
+]
+```
+
+Y para la portada:
+
+```js
+config: { heroImagen: 'assets/img/portada.jpg' }
+```
+
+Recomendaciones:
+
+- **Recorte cuadrado** para la galería; la primera entrada es la grande del mosaico.
+- **Tamaño**: ~1600 px de ancho la grande, ~900 px las demás, ~2000 px la portada.
+- **Formato**: JPG o WebP comprimido. Las de la galería ya cargan en diferido
+  (`loading="lazy"`), pero una foto de 6 MB igual se nota.
+- **La portada va horizontal y con aire a la izquierda**, porque el texto del hero
+  se encima de ese lado.
+- **`alt` describe la foto** para quien no puede verla; no lo dejes vacío.
+
+En cuanto todas las entradas tengan `src`, la nota de "ilustraciones de
+referencia" desaparece sola.
 
 ### Conectar los canales de contacto
 
@@ -164,6 +201,7 @@ detalle de una unidad desde cualquier otro punto de la página, y
 - [ ] Poner `config.demo` en `false` una vez cargado el inventario real, para
       que desaparezca el aviso de demostración.
 - [ ] Llenar `whatsapp`, `telefono`, `email` y `formEndpoint`.
-- [ ] Sustituir la ilustración del hero por fotografía o render del proyecto.
+- [ ] Sustituir las ilustraciones por fotografía real: portada
+      (`config.heroImagen`) y las cinco de `galeria`.
 - [ ] Revisar el texto legal del pie y la nota al pie de Disponibilidad con quien
       lleve el tema comercial.

@@ -198,6 +198,66 @@ a{color:inherit}
 .hero-facts strong{font-family:var(--serif);font-size:2.1rem;font-weight:400;line-height:1;color:var(--olive-900)}
 .hero-facts span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 
+/* ---------- Estilo de vida (galería) ---------- */
+.life-lede{margin:1.1rem 0 0;max-width:54ch;color:var(--muted)}
+
+.life-grid{
+  list-style:none;margin:2.8rem 0 0;padding:0;
+  display:grid;gap:12px;grid-template-columns:repeat(2,1fr);
+}
+.life-grid li{
+  position:relative;overflow:hidden;isolation:isolate;
+  border-radius:var(--radius);background:var(--sand-200);
+  aspect-ratio:1;
+}
+.life-grid li:first-child{grid-column:span 2;aspect-ratio:4/3}
+
+@media (min-width:900px){
+  .life-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  /* La grande ocupa un cuadrante 2x2; las cuatro chicas llenan el resto. */
+  .life-grid li:first-child{grid-row:span 2;aspect-ratio:auto}
+}
+
+/* Vale tanto para <img> como para el SVG de la ilustración. */
+.life-grid img,
+.life-grid svg{
+  position:absolute;inset:0;display:block;
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+}
+.life-grid li:hover img,
+.life-grid li:hover svg{transform:scale(1.045)}
+
+.life-grid li::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(to top,
+    rgba(29,27,24,.66) 0%,
+    rgba(29,27,24,.22) 38%,
+    rgba(29,27,24,0) 64%);
+}
+
+.life-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:1rem 1.1rem;color:#fff}
+.life-t{
+  display:block;font-family:var(--serif);font-size:1.28rem;line-height:1.15;
+  text-shadow:0 1px 10px rgba(29,27,24,.35);
+}
+.life-n{
+  display:block;margin-top:.22rem;
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.88);
+}
+.life-grid li:first-child .life-t{font-size:1.75rem}
+.life-grid li:first-child .life-cap{padding:1.3rem 1.4rem}
+
+.life-note{margin:1.5rem 0 0;font-size:.78rem;line-height:1.7;color:var(--muted)}
+.life-note[hidden]{display:none}
+
+/* Portada con fotografía: reemplaza la ilustración sin tocar el texto. */
+.hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+
 /* ---------- Secciones ---------- */
 .section{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .section-alt{background:var(--sand-100)}

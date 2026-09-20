@@ -32,6 +32,11 @@ window.VIENA_DATA = {
       apartado: 50000          // Monto de apartado en MXN
     },
 
+    /* Fotografía de portada. Vacío = se dibuja la ilustración del edificio.
+       Conviene horizontal y amplia (~2000px de ancho), porque el texto del
+       hero se encima del lado izquierdo. */
+    heroImagen: '',
+
     moneda: 'MXN',
     entregaEstimada: 'Entrega estimada 2027',
 
@@ -47,6 +52,26 @@ window.VIENA_DATA = {
        Mientras esté vacío, el formulario avisa en pantalla en vez de fallar en silencio. */
     formEndpoint: ''
   },
+
+  /* ---------- Galería de estilo de vida ----------
+     Para poner una foto real, escribe su ruta en `src`:
+
+        { src: 'assets/img/tules.jpg', alt: '...', titulo: 'Playa Los Tules', nota: 'A dos cuadras' }
+
+     Mientras `src` esté vacío se dibuja la ilustración indicada en `arte`
+     (ver assets/js/artwork.js). Así la página nunca se ve rota, y cambiar a
+     fotografía es una línea por imagen.
+
+     Para que se vean nítidas: ~1600px de ancho la grande y ~900px las demás,
+     recortadas en cuadrado, comprimidas en JPG o WebP. El `alt` describe la
+     foto para quien no la ve. */
+  galeria: [
+    { src: '', arte: 'playa',     titulo: 'Playa Los Tules',  nota: 'A dos cuadras',        alt: 'Atardecer en Playa Los Tules, con palmeras y la sierra al fondo.' },
+    { src: '', arte: 'bahia',     titulo: 'Bahía de Banderas', nota: 'La sierra y el mar',  alt: 'La Sierra Madre bajando hasta la Bahía de Banderas.' },
+    { src: '', arte: 'malecon',   titulo: 'Malecón',           nota: '12 minutos',          alt: 'Gente caminando por el malecón de Puerto Vallarta al anochecer.' },
+    { src: '', arte: 'versalles', titulo: 'Versalles',         nota: 'Al salir de casa',    alt: 'Calle de Versalles con terrazas de restaurantes y luces colgantes.' },
+    { src: '', arte: 'marina',    titulo: 'Marina Vallarta',   nota: '5 minutos',           alt: 'Mástiles de veleros en la Marina Vallarta.' }
+  ],
 
   /* ---------- Niveles del edificio ---------- */
   /* El orden de este arreglo define el orden de la torre (de abajo hacia arriba). */
