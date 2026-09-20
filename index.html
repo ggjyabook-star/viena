@@ -19,6 +19,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ApartmentComplex",
+  "name": "Viena Residences",
+  "description": "Edificio boutique de 13 residencias en Versalles, Puerto Vallarta, a dos cuadras de Playa Los Tules.",
+  "numberOfAccommodationUnits": 13,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Puerto Vallarta",
+    "addressRegion": "Jalisco",
+    "addressCountry": "MX"
+  }
+}
+</script>
+
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/availability.css">
 </head>
@@ -39,9 +55,9 @@
 
     <nav class="nav" id="nav" aria-label="Navegación principal">
       <a href="#proyecto">El proyecto</a>
+      <a href="#ubicacion">Ubicación</a>
       <a href="#amenidades">Amenidades</a>
       <a href="#disponibilidad">Disponibilidad</a>
-      <a href="#ubicacion">Ubicación</a>
       <a href="#inversion">Inversión</a>
       <a class="nav-cta" href="#contacto">Contacto</a>
     </nav>
@@ -134,8 +150,32 @@
   </div>
 </section>
 
+<!-- ============ UBICACIÓN ============ -->
+<section class="section section-alt" id="ubicacion">
+  <div class="shell grid-2">
+    <div>
+      <p class="eyebrow">Ubicación</p>
+      <h2 class="section-title">Versalles, el corazón que camina</h2>
+      <p class="prose">
+        A 2 cuadras de la playa Los Tules y a 1 cuadra de Plaza Caracol y de la
+        Av. Francisco Medina Ascencio. Rodeado de restaurantes de gastronomía
+        diversa, tiendas de conveniencia, bancos y centros médicos. Calles
+        completamente planas y ciclovía sobre la calle Viena.
+      </p>
+    </div>
+    <ul class="distance-list">
+      <li><span class="dist">2 cuadras</span><span class="place">Playa Los Tules</span></li>
+      <li><span class="dist">1 cuadra</span><span class="place">Plaza Caracol</span></li>
+      <li><span class="dist">1 cuadra</span><span class="place">Av. Francisco Medina Ascencio</span></li>
+      <li><span class="dist">5 min</span><span class="place">Marina Vallarta</span></li>
+      <li><span class="dist">10 min</span><span class="place">Aeropuerto Internacional</span></li>
+      <li><span class="dist">12 min</span><span class="place">Centro y Malecón</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ============ AMENIDADES ============ -->
-<section class="section section-alt" id="amenidades">
+<section class="section" id="amenidades">
   <div class="shell">
     <p class="eyebrow">Amenidades</p>
     <h2 class="section-title">Pensadas para vivir y para rentar</h2>
@@ -261,27 +301,38 @@
   </div>
 </section>
 
-<!-- ============ UBICACIÓN ============ -->
-<section class="section section-alt" id="ubicacion">
-  <div class="shell grid-2">
-    <div>
-      <p class="eyebrow">Ubicación</p>
-      <h2 class="section-title">Versalles, el corazón que camina</h2>
-      <p class="prose">
-        A 2 cuadras de la playa Los Tules y a 1 cuadra de Plaza Caracol y de la
-        Av. Francisco Medina Ascencio. Rodeado de restaurantes de gastronomía
-        diversa, tiendas de conveniencia, bancos y centros médicos. Calles
-        completamente planas y ciclovía sobre la calle Viena.
-      </p>
-    </div>
-    <ul class="distance-list">
-      <li><span class="dist">2 cuadras</span><span class="place">Playa Los Tules</span></li>
-      <li><span class="dist">1 cuadra</span><span class="place">Plaza Caracol</span></li>
-      <li><span class="dist">1 cuadra</span><span class="place">Av. Francisco Medina Ascencio</span></li>
-      <li><span class="dist">5 min</span><span class="place">Marina Vallarta</span></li>
-      <li><span class="dist">10 min</span><span class="place">Aeropuerto Internacional</span></li>
-      <li><span class="dist">12 min</span><span class="place">Centro y Malecón</span></li>
-    </ul>
+<!-- ============ CÓMO SE COMPRA ============ -->
+<section class="section section-alt" id="proceso">
+  <div class="shell">
+    <p class="eyebrow">Cómo se compra</p>
+    <h2 class="section-title">Cuatro pasos, sin letras chiquitas</h2>
+    <ol class="step-list">
+      <li>
+        <span class="step-n" aria-hidden="true">01</span>
+        <h3>Elige tu residencia</h3>
+        <p>Compara superficies, vistas y precios en <a href="#disponibilidad">Disponibilidad</a> y agenda una visita a obra.</p>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">02</span>
+        <h3>Aparta</h3>
+        <p>Con <b data-cfg="apartado">$50,000 MXN</b> la unidad sale del inventario y se congela su precio de etapa.</p>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">03</span>
+        <h3>Firma y enganche</h3>
+        <p>El <b data-cfg="enganche">20%</b> al firmar el contrato, descontando lo que ya diste de apartado.</p>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">04</span>
+        <h3>Entrega</h3>
+        <p>El <b data-cfg="contraEntrega">80%</b> restante contra entrega. <span data-cfg="entrega">Entrega estimada 2027</span>.</p>
+      </li>
+    </ol>
+    <p class="step-note">
+      El desglose exacto de cada unidad aparece en su ficha, dentro de Disponibilidad.
+      Las cifras son de referencia y no incluyen escrituración, impuestos ni cuotas de
+      mantenimiento; el esquema definitivo se formaliza en el contrato.
+    </p>
   </div>
 </section>
 
@@ -355,9 +406,9 @@
     </div>
     <nav class="footer-nav" aria-label="Navegación del pie">
       <a href="#proyecto">El proyecto</a>
+      <a href="#ubicacion">Ubicación</a>
       <a href="#amenidades">Amenidades</a>
       <a href="#disponibilidad">Disponibilidad</a>
-      <a href="#ubicacion">Ubicación</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <p class="footer-legal">

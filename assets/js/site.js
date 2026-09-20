@@ -67,6 +67,26 @@
     secciones.forEach(function (s) { spy.observe(s); });
   }
 
+  /* ---------- Cifras del proceso de compra ----------
+     Se toman de config.plan para que nunca se desfasen del detalle de cada
+     unidad. El HTML trae valores por defecto legibles si esto no corre. */
+  var plan = CFG.plan || {};
+  var dinero = new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: CFG.moneda || 'MXN',
+    maximumFractionDigits: 0
+  });
+  var valores = {
+    apartado: plan.apartado ? dinero.format(plan.apartado) : '',
+    enganche: plan.enganche ? Math.round(plan.enganche * 100) + '%' : '',
+    contraEntrega: plan.contraEntrega ? Math.round(plan.contraEntrega * 100) + '%' : '',
+    entrega: CFG.entregaEstimada || ''
+  };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cfg]'), function (n) {
+    var v = valores[n.getAttribute('data-cfg')];
+    if (v) n.textContent = v;
+  });
+
   /* ---------- Contacto directo (sólo canales configurados) ---------- */
   var directo = document.getElementById('contact-direct');
   if (directo) {

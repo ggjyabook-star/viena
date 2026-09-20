@@ -22,6 +22,31 @@ tradicional por FTP).
 
 ---
 
+## Orden de la página
+
+Las secciones siguen la narrativa de compra, no el orden en que se escribieron:
+
+| # | Sección | Qué responde |
+|---|---|---|
+| 1 | Hero | Qué es y por qué importa |
+| 2 | El proyecto | Cómo está pensado |
+| 3 | Ubicación | Dónde está y qué tiene cerca |
+| 4 | Amenidades | Qué incluye |
+| 5 | **Disponibilidad** | Qué hay y a qué precio |
+| 6 | Cómo se compra | Qué sigue después de elegir |
+| 7 | Inversión | Por qué conviene |
+| 8 | Contacto | Con quién hablar |
+
+Disponibilidad va después de las secciones que venden el proyecto y antes de las
+que cierran la venta; lleva filetes arriba y abajo para marcarla como la pieza
+central. Se llega a ella directo desde el menú y desde el botón del hero.
+
+Las cifras de «Cómo se compra» (apartado, enganche, contra entrega, entrega
+estimada) se leen de `config.plan` para que nunca se desfasen del desglose que
+aparece en la ficha de cada unidad.
+
+---
+
 ## Estructura
 
 ```

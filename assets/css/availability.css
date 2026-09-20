@@ -5,7 +5,14 @@
    Depende de los tokens de color declarados en site.css.
    ============================================================ */
 
-.av{background:var(--sand-50)}
+/* Queda entre dos secciones claras, así que se marca con filetes y algo más
+   de aire: es la pieza central de la página. */
+.av{
+  background:var(--sand-50);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding-block:clamp(4rem,9vw,7.5rem);
+}
 
 /* ---------- Encabezado ---------- */
 .av-head{
