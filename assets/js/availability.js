@@ -145,6 +145,17 @@
 
   /* ---------- Resumen ---------- */
 
+  function pintarDemo() {
+    var aviso = el('av-demo');
+    if (!aviso) return;
+    if (!CFG.demo) { aviso.hidden = true; return; }
+    aviso.hidden = false;
+    aviso.innerHTML =
+      '<span><b>Inventario de demostración.</b> Las unidades, superficies y precios ' +
+      'de esta página son datos de ejemplo para mostrar el diseño: no representan la ' +
+      'disponibilidad real del proyecto. Escríbenos para conocer el inventario vigente.</span>';
+  }
+
   function pintarStats() {
     var cont = el('av-stats');
     if (!cont) return;
@@ -581,6 +592,7 @@
   /* ---------- Arranque ---------- */
 
   pintarEncabezado();
+  pintarDemo();
   pintarStats();
   pintarTorre();
   sincronizarControles();

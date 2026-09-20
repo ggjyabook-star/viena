@@ -10,6 +10,13 @@ window.VIENA_DATA = {
 
   /* ---------- Configuración general ---------- */
   config: {
+    /* MODO DEMOSTRACIÓN.
+       Mientras sea true, la sección de Disponibilidad muestra un aviso visible
+       de que el inventario es de ejemplo. Cambiar a false SÓLO cuando las
+       unidades de abajo sean las reales. Así el sitio nunca se publica por
+       accidente presentando precios de ejemplo como disponibilidad real. */
+    demo: true,
+
     /* Etapa comercial vigente. Se muestra en el encabezado de Disponibilidad. */
     etapa: 'Etapa 1 de ventas',
 

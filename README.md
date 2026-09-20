@@ -54,6 +54,7 @@ filtros, la tabla y las tarjetas.
 
 ```js
 config: {
+  demo: true,                 // aviso de "datos de ejemplo"; poner false con inventario real
   etapa: 'Etapa 1 de ventas',
   descuento: 0.15,            // 0 desactiva el descuento en toda la sección
   plan: {
@@ -68,6 +69,13 @@ config: {
 El descuento se aplica **sólo a unidades disponibles**; las vendidas y
 apartadas no muestran precio. El desglose de pagos del detalle se calcula a
 partir de estos valores.
+
+### Apagar el aviso de demostración
+
+Mientras `config.demo` sea `true`, la sección muestra un aviso visible de que el
+inventario es de ejemplo. Es una red de seguridad: evita que el sitio salga a
+producción presentando precios de ejemplo como disponibilidad real. Cambiarlo a
+`false` **sólo** cuando las unidades de `unidades` sean las reales.
 
 ### Conectar los canales de contacto
 
@@ -128,6 +136,8 @@ detalle de una unidad desde cualquier otro punto de la página, y
 
 - [ ] **Reemplazar el inventario de ejemplo** de `assets/js/data.js` por las
       unidades, superficies, vistas, estados y precios reales.
+- [ ] Poner `config.demo` en `false` una vez cargado el inventario real, para
+      que desaparezca el aviso de demostración.
 - [ ] Llenar `whatsapp`, `telefono`, `email` y `formEndpoint`.
 - [ ] Sustituir la ilustración del hero por fotografía o render del proyecto.
 - [ ] Revisar el texto legal del pie y la nota al pie de Disponibilidad con quien
